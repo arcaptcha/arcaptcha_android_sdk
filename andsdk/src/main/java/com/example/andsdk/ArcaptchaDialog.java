@@ -27,7 +27,7 @@ public class ArcaptchaDialog extends DialogFragment {
     public String siteKey;
     public String domain;
 
-    public static final String ARCAPTCHA_URL = "https://nwidget.arcaptcha.ir/show_challenge";
+    public static final String ARCAPTCHA_URL = "https://widget.arcaptcha.ir/show_challenge";
 
     public static final String ARCAPTCHA_LISTENER_TAG = "arcaptcha_listener";
     public static final String ARCAPTCHA_SITE_KEY_TAG = "site_key";
