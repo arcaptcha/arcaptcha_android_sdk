@@ -21,20 +21,20 @@ dependencies {
 
 ## Maven
 <pre>
-<repositories>
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
-</repositories>
+	<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
 
-Step 2. Add the dependency
+    //Step 2. Add the dependency
 
-<dependency>
-    <groupId>com.github.arcaptcha</groupId>
-    <artifactId>arcaptcha_android_sdk</artifactId>
-    <version>Tag</version>
-</dependency>
+    <dependency>
+	    <groupId>com.github.arcaptcha</groupId>
+	    <artifactId>arcaptcha_android_sdk</artifactId>
+	    <version>0.0.2</version>
+	</dependency>
 </pre>
 
 
