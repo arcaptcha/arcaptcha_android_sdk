@@ -7,6 +7,7 @@ This SDK provides a wrapper for [ARCaptcha](https://www.arcaptcha.ir). You will 
 
 ### Installation
 
+## Gradle
 <pre>
 // Register JitPack Repository inside the root build.gradle file
 repositories {
@@ -14,9 +15,28 @@ repositories {
 }
 // Add ARCaptcha sdk dependency inside the app's build.gradle file
 dependencies {
-    <b>implementation 'com.github.sadeghb97:arcaptcha_android_sdk:0.0.1'</b>
+    <b>implementation 'com.github.arcaptcha:arcaptcha_android_sdk:0.0.2'</b>
 }
 </pre>
+
+## Maven
+<pre>
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
+Step 2. Add the dependency
+
+<dependency>
+    <groupId>com.github.arcaptcha</groupId>
+    <artifactId>arcaptcha_android_sdk</artifactId>
+    <version>Tag</version>
+</dependency>
+</pre>
+
 
 
 #### Display a ARCaptcha challenge
