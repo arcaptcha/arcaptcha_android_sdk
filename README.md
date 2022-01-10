@@ -20,7 +20,7 @@ dependencies {
 </pre>
 
 ## Maven
-<pre>
+```xml
 	<repositories>
 		<repository>
 		    <id>jitpack.io</id>
@@ -35,7 +35,7 @@ dependencies {
 	    <artifactId>arcaptcha_android_sdk</artifactId>
 	    <version>0.0.2</version>
 	</dependency>
-</pre>
+```
 
 
 
