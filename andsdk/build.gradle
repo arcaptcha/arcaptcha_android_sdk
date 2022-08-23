@@ -1,9 +1,8 @@
 plugins {
     id 'com.android.library'
     id 'maven-publish'
+    id 'com.github.dcendents.android-maven'
 }
-group 'com.github.azzztec'
-version '1.0.0-SNAPSHOT'
 
 android {
     compileSdkVersion 30
@@ -47,7 +46,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.arcaptcha'
                 artifactId = 'andsdk'
-                version = '0.0.3beta.1'
+                version = '0.0.3beta.2'
             }
         }
     }
