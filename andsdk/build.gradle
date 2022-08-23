@@ -3,7 +3,8 @@ plugins {
     id 'maven-publish'
     id 'com.github.dcendents.android-maven'
 }
-
+group = 'com.github.arcaptcha'
+version = 'v0.0.3beta.3'
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -45,8 +46,8 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
                 groupId = 'com.github.arcaptcha'
-                artifactId = 'andsdk'
-                version = '0.0.3beta.2'
+                artifactId = 'arcaptcha_android_sdk'
+                version = 'v0.0.3beta.3'
             }
         }
     }
