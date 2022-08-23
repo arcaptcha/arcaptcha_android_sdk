@@ -15,7 +15,7 @@ repositories {
 }
 // Add ARCaptcha sdk dependency inside the app's build.gradle file
 dependencies {
-    <b>implementation 'com.github.arcaptcha:arcaptcha_android_sdk:0.0.2'</b>
+    <b>implementation 'com.github.arcaptcha:arcaptcha_android_sdk:0.0.3'</b>
 }
 </pre>
 
