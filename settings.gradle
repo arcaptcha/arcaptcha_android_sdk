@@ -1,5 +1,4 @@
+
 include ':andsdk'
-include ':androidsdk'
-include ':arcaptchasdk'
 include ':app'
 rootProject.name = "ArcaptchaAndroid"

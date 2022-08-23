@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:layout_margin="32dp"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/transparent"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/clRootView"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <WebView
+        android:background="@android:color/transparent"
         android:id="@+id/webMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-</LinearLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/webMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/webMain" />
+
+    <ImageView
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:padding="10dp"
+        android:id="@+id/ivClose"
+        android:layout_width="50dp"
+        android:background="@drawable/ic_bg_close"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_close"
+        app:tint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
