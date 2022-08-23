@@ -47,19 +47,9 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.arcaptcha'
                 artifactId = 'andsdk'
-                version = '0.0.6'
+                version = '0.0.3beta.1'
             }
         }
     }
 }
 
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            groupId = 'com.github.arcaptcha'
-            artifactId = 'andsdk'
-            version = 'v0.0.3-beta.1'
-
-        }
-    }
-}
