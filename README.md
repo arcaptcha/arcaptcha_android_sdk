@@ -71,8 +71,8 @@ To set theme and bg_color parameter you can instantiate dialog like this :
 arcaptchaDialog = ArcaptchaDialog.getInstance(
         YOUR_API_SITE_KEY,
         DOMAIN,
-        "dark",
-        "gray",
+        "dark",//theme
+        "gray",//bg_color(If you want transparent just set it to "")
         ArcaptchaListener arcaptchaListener)
 ```
 
