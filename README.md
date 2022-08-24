@@ -15,7 +15,7 @@ repositories {
 }
 // Add ARCaptcha sdk dependency inside the app's build.gradle file
 dependencies {
-    <b>implementation 'com.github.arcaptcha:arcaptcha_android_sdk:0.0.3'</b>
+    <b>implementation 'com.github.arcaptcha:arcaptcha_android_sdk:0.0.8'</b>
 }
 </pre>
 
@@ -32,7 +32,7 @@ dependencies {
 <dependency>
     <groupId>com.github.arcaptcha</groupId>
     <artifactId>arcaptcha_android_sdk</artifactId>
-    <version>v0.0.3beta.7</version>
+    <version>v0.0.8</version>
 </dependency>
 ```
 
@@ -65,6 +65,16 @@ arcaptchaDialog = ArcaptchaDialog.getInstance(YOUR_API_SITE_KEY,
         DOMAIN, arcaptchaListener);
 arcaptchaDialog.show(getSupportFragmentManager(), "arcaptcha_dialog_tag");
 ```
+To set theme and bg_color parameter you can instantiate dialog like this :
+
+```java
+arcaptchaDialog = ArcaptchaDialog.getInstance(
+        YOUR_API_SITE_KEY,
+        DOMAIN,
+        "dark",
+        "gray",
+        ArcaptchaListener arcaptchaListener)
+```
 
 
 ##### Config params
@@ -74,6 +84,8 @@ arcaptchaDialog.show(getSupportFragmentManager(), "arcaptcha_dialog_tag");
 |---|---|---|---|---|
 |`siteKey`|String|**Yes**|-|This is your sitekey, this allows you to load challenges. If you need a sitekey, please visit [ARCaptcha](https://arcaptcha.ir/sign-up), and sign up to get your sitekey.|
 |`domain`|String|**Yes**|-|-|
+|`theme`|String|**No**|`"light"`|Will set theme of widget|
+|`bg_color`|String|**No**|`""`|Note: if you set this propery to `""` `bg_color` will be `transparent`| 
 
 
 #### Verify the completed challenge
