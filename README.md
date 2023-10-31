@@ -61,19 +61,20 @@ ArcaptchaDialog.ArcaptchaListener arcaptchaListener = new ArcaptchaDialog.Arcapt
     }
 };
 
-arcaptchaDialog = ArcaptchaDialog.getInstance(YOUR_API_SITE_KEY,
-        DOMAIN, arcaptchaListener);
-arcaptchaDialog.show(getSupportFragmentManager(), "arcaptcha_dialog_tag");
+        ArcaptchaDialog.Builder arcaptchaDialogBuilder = new ArcaptchaDialog.Builder(
+            YOUR_API_SITE_KEY, DOMAIN, arcaptchaListener);
+        arcaptchaDialog = arcaptchaDialogBuilder.build();
+        arcaptchaDialog.show(getSupportFragmentManager(), "arcaptcha_dialog");
 ```
-To set theme and bg_color parameter you can instantiate dialog like this :
+To set theme, bg_color or custom url you can instantiate dialog like this :
 
 ```java
-arcaptchaDialog = ArcaptchaDialog.getInstance(
-        YOUR_API_SITE_KEY,
-        DOMAIN,
-        "dark",//theme
-        "gray",//bg_color(If you want transparent just set it to "")
-        ArcaptchaListener arcaptchaListener)
+        ArcaptchaDialog.Builder arcaptchaDialogBuilder = new ArcaptchaDialog.Builder(
+            YOUR_API_SITE_KEY, DOMAIN, arcaptchaListener);
+        arcaptchaDialogBuilder.setTheme("dark"); //Optional
+        arcaptchaDialogBuilder.setBackgroundColor("#7E7E7E"); //Optional
+        arcaptchaDialogBuilder.setChallengeUrl(YOUR_URL); //Optional
+        arcaptchaDialog = arcaptchaDialogBuilder.build();
 ```
 
 
@@ -81,9 +82,10 @@ arcaptchaDialog = ArcaptchaDialog.getInstance(
 
 
 |Name|Values/Type|Required|Default|Description|
-|---|---|---|---|---|
+|--|---|---|---|---|
 |`siteKey`|String|**Yes**|-|This is your sitekey, this allows you to load challenges. If you need a sitekey, please visit [ARCaptcha](https://arcaptcha.ir/sign-up), and sign up to get your sitekey.|
 |`domain`|String|**Yes**|-|-|
+|`challenge_url`|String|**No**|`"https://widget.arcaptcha.ir/show_challenge"`|Url that contains arcaptcha challenge |
 |`theme`|String|**No**|`"light"`|Will set theme of widget|
 |`bg_color`|String|**No**|`""`|Note: if you set this propery to `""` `bg_color` will be `transparent`| 
 

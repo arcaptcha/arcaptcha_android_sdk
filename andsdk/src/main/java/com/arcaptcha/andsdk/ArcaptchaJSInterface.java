@@ -19,7 +19,6 @@ public class ArcaptchaJSInterface {
 
     @android.webkit.JavascriptInterface
     public void dismiss(){
-        Log.d("XQQQCancel", "dismiss: ");
         if(arcaptchaListener != null) arcaptchaListener.onCancel();
     }
 }

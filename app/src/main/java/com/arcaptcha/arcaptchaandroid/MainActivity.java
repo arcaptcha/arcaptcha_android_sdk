@@ -3,7 +3,6 @@ package com.arcaptcha.arcaptchaandroid;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -37,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.LENGTH_LONG).show();
                         arcaptchaDialog.dismiss();
 
-                        Log.d("XQQQAT", "[" + token + "]");
                         txvLog.setText("ArcaptchaToken: \n" + token);
                     }
 
@@ -47,8 +45,11 @@ public class MainActivity extends AppCompatActivity {
                     }
                 };
 
-                arcaptchaDialog = ArcaptchaDialog.getInstance("s14ajm9xob",
-                        "forsdk.com","dark","#7E7E7E", arcaptchaListener);
+                ArcaptchaDialog.Builder arcaptchaDialogBuilder = new ArcaptchaDialog.Builder("afge5xjsq6",
+                        "forsdk.com", arcaptchaListener);
+                arcaptchaDialogBuilder.setTheme("dark");
+                arcaptchaDialogBuilder.setBackgroundColor("#7E7E7E");
+                arcaptchaDialog = arcaptchaDialogBuilder.build();
                 arcaptchaDialog.show(getSupportFragmentManager(), "arcaptcha_dialog");
             }
         });
