@@ -61,20 +61,20 @@ ArcaptchaDialog.ArcaptchaListener arcaptchaListener = new ArcaptchaDialog.Arcapt
     }
 };
 
-        ArcaptchaDialog.Builder arcaptchaDialogBuilder = new ArcaptchaDialog.Builder(
-            YOUR_API_SITE_KEY, DOMAIN, arcaptchaListener);
-        arcaptchaDialog = arcaptchaDialogBuilder.build();
-        arcaptchaDialog.show(getSupportFragmentManager(), "arcaptcha_dialog");
+ArcaptchaDialog.Builder arcaptchaDialogBuilder = new ArcaptchaDialog.Builder(
+    YOUR_API_SITE_KEY, DOMAIN, arcaptchaListener);
+arcaptchaDialog = arcaptchaDialogBuilder.build();
+arcaptchaDialog.show(getSupportFragmentManager(), "arcaptcha_dialog");
 ```
 To set theme, bg_color or custom url you can instantiate dialog like this :
 
 ```java
-        ArcaptchaDialog.Builder arcaptchaDialogBuilder = new ArcaptchaDialog.Builder(
-            YOUR_API_SITE_KEY, DOMAIN, arcaptchaListener);
-        arcaptchaDialogBuilder.setTheme("dark"); //Optional
-        arcaptchaDialogBuilder.setBackgroundColor("#7E7E7E"); //Optional
-        arcaptchaDialogBuilder.setChallengeUrl(YOUR_URL); //Optional
-        arcaptchaDialog = arcaptchaDialogBuilder.build();
+ArcaptchaDialog.Builder arcaptchaDialogBuilder = new ArcaptchaDialog.Builder(
+    YOUR_API_SITE_KEY, DOMAIN, arcaptchaListener);
+arcaptchaDialogBuilder.setTheme("dark"); //Optional
+arcaptchaDialogBuilder.setBackgroundColor("#7E7E7E"); //Optional
+arcaptchaDialogBuilder.setChallengeUrl(YOUR_URL); //Optional
+arcaptchaDialog = arcaptchaDialogBuilder.build();
 ```
 
 
