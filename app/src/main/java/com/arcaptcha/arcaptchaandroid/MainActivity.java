@@ -3,6 +3,8 @@ package com.arcaptcha.arcaptchaandroid;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Parcel;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -27,16 +29,16 @@ public class MainActivity extends AppCompatActivity {
         btnExe1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txvLog.setText("Hello");
+                txvLog.setText("Arcaptcha");
 
                 ArcaptchaDialog.ArcaptchaListener arcaptchaListener = new ArcaptchaDialog.ArcaptchaListener() {
                     @Override
                     public void onSuccess(String token) {
+                        Log.d("XQQQToken", "|" + token + "|");
                         Toast.makeText(MainActivity.this, "Puzzle Solved, Token Generated!",
                                 Toast.LENGTH_LONG).show();
                         arcaptchaDialog.dismiss();
-
-                        txvLog.setText("ArcaptchaToken: \n" + token);
+                        appendLog("ArcaptchaToken: \n" + token);
                     }
 
                     @Override
@@ -45,12 +47,36 @@ public class MainActivity extends AppCompatActivity {
                     }
                 };
 
-                ArcaptchaDialog.Builder arcaptchaDialogBuilder = new ArcaptchaDialog.Builder("afge5xjsq6",
-                        "forsdk.com", arcaptchaListener);
+                ArcaptchaDialog.Builder arcaptchaDialogBuilder = new ArcaptchaDialog.Builder(
+                        "afge5xjsq6",
+                        "igpro.ir", arcaptchaListener);
                 arcaptchaDialogBuilder.setTheme("dark");
                 arcaptchaDialogBuilder.setBackgroundColor("#7E7E7E");
+                arcaptchaDialogBuilder.setResponseCodeListener(new ArcaptchaDialog.ResponseCodeListener() {
+                    @Override
+                    public void onResponse(int statusCode) {
+                        appendLog("Response Code: " + statusCode);
+                    }
+                });
+                arcaptchaDialogBuilder.setTimeout(10000, new ArcaptchaDialog.TimeoutCallback() {
+                    @Override
+                    public void onTimeout() {
+                        appendLog("Timeout Happens!");
+                    }
+                });
                 arcaptchaDialog = arcaptchaDialogBuilder.build();
                 arcaptchaDialog.show(getSupportFragmentManager(), "arcaptcha_dialog");
+            }
+        });
+    }
+
+    public void appendLog(String log){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                String starter = txvLog.getText().toString().isEmpty() ? ""
+                        : txvLog.getText().toString() + "\n";
+                txvLog.setText(starter + log);
             }
         });
     }
