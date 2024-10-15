@@ -77,6 +77,24 @@ arcaptchaDialogBuilder.setChallengeUrl(YOUR_URL); //Optional
 arcaptchaDialog = arcaptchaDialogBuilder.build();
 ```
 
+You can also set timeout and listener for response code:
+
+```java
+arcaptchaDialogBuilder.setResponseCodeListener(new ArcaptchaDialog.ResponseCodeListener() {
+    @Override
+    public void onResponse(int statusCode) {
+        appendLog("Response Code: " + statusCode);
+    }
+});
+
+arcaptchaDialogBuilder.setTimeout(10000, new ArcaptchaDialog.TimeoutCallback() {
+    @Override
+    public void onTimeout() {
+        appendLog("Timeout Happens!");
+    }
+});
+```
+
 
 ##### Config params
 
