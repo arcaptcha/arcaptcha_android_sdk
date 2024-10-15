@@ -15,7 +15,7 @@ repositories {
 }
 // Add ARCaptcha sdk dependency inside the app's build.gradle file
 dependencies {
-    <b>implementation 'com.github.arcaptcha:arcaptcha_android_sdk:0.1.0'</b>
+    <b>implementation 'com.github.arcaptcha:arcaptcha_android_sdk:v0.1.1'</b>
 }
 </pre>
 
@@ -32,7 +32,7 @@ dependencies {
 <dependency>
     <groupId>com.github.arcaptcha</groupId>
     <artifactId>arcaptcha_android_sdk</artifactId>
-    <version>0.0.8</version>
+    <version>v0.1.1</version>
 </dependency>
 ```
 
